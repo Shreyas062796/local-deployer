@@ -1,0 +1,33 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - deployer.shreyas.com.shreyas.com
+  resources:
+  - myoperators
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - deployer.shreyas.com.shreyas.com
+  resources:
+  - myoperators/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - deployer.shreyas.com.shreyas.com
+  resources:
+  - myoperators/status
+  verbs:
+  - get
+  - patch
+  - update

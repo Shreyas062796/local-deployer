@@ -1,0 +1,31 @@
+# permissions for end users to edit myoperators.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: myoperator-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: local-deployer
+    app.kubernetes.io/part-of: local-deployer
+    app.kubernetes.io/managed-by: kustomize
+  name: myoperator-editor-role
+rules:
+- apiGroups:
+  - deployer.shreyas.com.shreyas.com
+  resources:
+  - myoperators
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - deployer.shreyas.com.shreyas.com
+  resources:
+  - myoperators/status
+  verbs:
+  - get

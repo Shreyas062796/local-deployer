@@ -1,0 +1,12 @@
+apiVersion: deployer.shreyas.com.shreyas.com/v1alpha1
+kind: MyOperator
+metadata:
+  labels:
+    app.kubernetes.io/name: myoperator
+    app.kubernetes.io/instance: myoperator-sample
+    app.kubernetes.io/part-of: local-deployer
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: local-deployer
+  name: myoperator-sample
+spec:
+  # TODO(user): Add fields here
